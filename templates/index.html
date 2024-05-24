@@ -32,7 +32,7 @@
       align-items: center;
       justify-content: flex-start;
       height: 83vh;
-      background-color: whitesmoke; 
+      background-color:snow;
       color: rgb(0, 0, 0);
       padding: 75px;
       }
@@ -89,13 +89,18 @@
 
             <section class="hero">
               <div class="hero-content">
-                <div class="form-group">
-                  <div>
-                  <h1>MediGuide</h1>
+                <div>
+                  <div class="logo">
+                    <img class="myimg" src="{{ url_for('static', filename='img.jpg') }}" alt="Logo">
+                  </div>
+                <h1>MediGuide</h1>
                   <h3>Your personal healthcare guide.</h3>
                   <p>Select more symptoms for accuracy.</p>
+                </div>
+                  <div class="form-group">
+                  <div>
                   <label for="symptom1">Symptom 1:</label>
-                  <select class="form-select" id="symptom1" name="symptoms[]">
+                  <select class="form-select card border-dark" id="symptom1" name="symptoms[]">
                       <option value="" disabled selected>Select Symptom</option>
                       {% for symptom, _ in symptoms_dict.items()|sort %}
                       <option value="{{ symptom }}">{{ symptom }}</option>
@@ -104,7 +109,7 @@
               </div>
               <div class="form-group">
                   <label for="symptom2">Symptom 2:</label>
-                  <select class="form-select" id="symptom2" name="symptoms[]">
+                  <select class="form-select card border-dark" id="symptom2" name="symptoms[]">
                       <option value="" disabled selected>Select Symptom</option>
                       {% for symptom, _ in symptoms_dict.items()|sort %}
                       <option value="{{ symptom }}">{{ symptom }}</option>
@@ -114,7 +119,7 @@
   
               <div class="form-group">
                   <label for="symptom3">Symptom 3:</label>
-                  <select class="form-select" id="symptom3" name="symptoms[]">
+                  <select class="form-select card border-dark" id="symptom3" name="symptoms[]">
                       <option value="" disabled selected>Select Symptom</option>
                       {% for symptom, _ in symptoms_dict.items()|sort %}
                       <option value="{{ symptom }}">{{ symptom }}</option>
@@ -123,7 +128,7 @@
               </div>
               <div class="form-group">
                   <label for="symptom4">Symptom 4:</label>
-                  <select class="form-select" id="symptom4" name="symptoms[]">
+                  <select class="form-select card border-dark" id="symptom4" name="symptoms[]">
                       <option value="" disabled selected>Select Symptom</option>
                       {% for symptom, _ in symptoms_dict.items()|sort %}
                       <option value="{{ symptom }}">{{ symptom }}</option>
@@ -138,31 +143,30 @@
               {% if message %}
               <p>{{ message }}</p>
               {% endif %}
-              
-              
   
-              <button type="submit" class="btn btn-danger btn-lg" style="width: 100%; padding: 5px; margin-bottom: 5px;">Predict</button>
+              <button type="submit" class=" btn btn-danger btn-lg" style="width: 100%; padding: 5px; margin-bottom: 5px;">Predict</button>
           </form>
           </div>
           </div>
           
           </div>
           <div class="container ms-5 mt-2">
-            <h1 class="ms-2 mt-2">Results</h1>
+            <h1 class="text-center mt-2">Results</h1>
             <div class="container mt-2">
               <div class="result-container">
         
                 <div class="card border-dark mb-3 p-2" style="max-width: 1440px;">
                   <div class="row g-0">
-                    <div class="col-md-4">
+                   <!-- <div class="col-md-4">
                       <img src="..." class="img-fluid rounded-start" alt="...">
                     </div>
-                    <div class="col-md-8">
+                  
+                    <div class="col-md-8"> -->
                       <div class="card-body">
                         <h2 class="card-title">{{ predicted_disease }}</h2>
                         <p class="card-text">{{ dis_des }}</p>
                       </div>
-                    </div>
+                  <!-- </div> -->
                   </div>
                 </div>
         
