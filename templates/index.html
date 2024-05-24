@@ -93,7 +93,7 @@
                   <div>
                   <h1>MediGuide</h1>
                   <h3>Your personal healthcare guide.</h3>
-                  <p>Select 4 symptoms for accuracy.</p>
+                  <p>Select more symptoms for accuracy.</p>
                   <label for="symptom1">Symptom 1:</label>
                   <select class="form-select" id="symptom1" name="symptoms[]">
                       <option value="" disabled selected>Select Symptom</option>
@@ -134,11 +134,10 @@
   
               <!-- Display the transcribed text here -->
               <div name="mysysms" id="transcription"></div>
-  
+              <br>
               {% if message %}
               <p>{{ message }}</p>
               {% endif %}
-              <br>
               
               
   
@@ -171,8 +170,8 @@
             <div class="row">
               <div class="col">
                 <div class="card border-dark mb-3" style="max-width: 18rem; height: 18rem;">
-                  <div class="card-header">Precaution</div>
-                  <div class="card-text p-2" style="overflow-y: auto;">
+                  <h5 class="card-title text-center p-2">Precaution</h5>
+                  <div class="card-text" style="overflow-y: auto;">
                       <ul>
                         {% for i in my_precautions %}
                         <li>{{ i }}</li>
@@ -184,8 +183,8 @@
         
               <div class="col">
                 <div class="card border-dark mb-3" style="max-width: 18rem; height: 18rem;">
-                  <div class="card-header">Medication</div>
-                  <div class="card-text p-2" style="overflow-y: auto;">
+                  <h5 class="card-title text-center p-2">Medication</h5>
+                  <div class="card-text" style="overflow-y: auto;">
                       <ul>
                         {% for i in medications %}
                         <li>{{ i }}</li>
@@ -197,8 +196,8 @@
         
               <div class="col">
                 <div class="card border-dark mb-3" style="max-width: 18rem; height: 18rem;">
-                  <div class="card-header">Workout</div>
-                  <div class="card-text p-2" style="overflow-y: auto;">
+                  <h5 class="card-title text-center p-2">Workout</h5>
+                  <div class="card-text" style="overflow-y: auto;">
                       <ul>
                         {% for i in workout %}
                         <li>{{ i }}</li>
@@ -210,8 +209,8 @@
         
               <div class="col">
                 <div class="card border-dark mb-3" style="max-width: 18rem; height: 18rem;">
-                  <div class="card-header">Diet</div>
-                  <div class="card-text p-2" style="overflow-y: auto;">
+                  <h5 class="card-title text-center p-2">Diet</h5>
+                  <div class="card-text" style="overflow-y: auto;">
                       <ul>
                         {% for i in my_diet %}
                         <li>{{ i }}</li>
